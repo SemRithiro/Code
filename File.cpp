@@ -82,13 +82,37 @@ public:
 	}
 };
 
-void main(){
+/*void main(){
 	person pers,pers1;
 	pers.getData();
 	fstream iofile;
-	iofile.open("PERSON.DAT",ios::out | ios::in);
+	iofile.open("PERSON.TXT",ios::out|ios::in);
 		iofile.write((char*)(&pers), sizeof(pers));
 		iofile.read((char*)(&pers1), sizeof(pers1));
 		pers1.showData();
 	iofile.close();
+}*/
+
+void main(){
+	person pers[20],pers1[20],pers2;
+/*	for(int i=0;i<4;i++)
+		pers[i].getData();
+	ofstream outfile("PERSON.DAT",ios::binary);
+	outfile.write((char*)(&pers),4*sizeof(person));
+	outfile.close();
+	cout<<endl;*/
+
+/*	ifstream infile("PERSON.DAT",ios::binary);
+	infile.read((char*)(&pers1),4*sizeof(person));
+	for(int i=0;i<4;i++)
+		pers1[i].showData();
+	infile.close();*/
+
+	ifstream infile("PERSON.DAT");
+	while(1){
+		infile.read((char*)(&pers2),sizeof(person));
+		if(infile.eof()) break;
+		pers2.showData();
+	}
+	infile.close();
 }
