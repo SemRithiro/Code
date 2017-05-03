@@ -1,6 +1,6 @@
-+File Management:
+Command
 
-Listing current working directory or other : ls [optional] [directory]
+Listing current working directory or other : $ls [optional] [directory]
 +----+--------------------------------------------+
 | -l | list with detail                           |
 +----+--------------------------------------------+
@@ -9,24 +9,34 @@ Listing current working directory or other : ls [optional] [directory]
 | *  | list all file include file in subdirectory |
 +----+--------------------------------------------+
 
-Listing current working directory with filter : ls [optional] | grep "condition"
-Ex. ls -l | grep ".cpp"
+Listing current working directory with filter : $ls [optional] | grep "condition"
+Ex. $ls -l | grep ".cpp"
 
-Changing directory : cd [directory]
-+---+----------------+
-| ~ | home directory |
-+---+----------------+
-| / | root directory |
-+---+----------------+
+Changing directory : $cd [directory]
++----+--------------------+
+| ~  | home directory     |
++----+--------------------+
+| /  | root directory     |
++----+--------------------+
+| -  | last directory     |
++----+--------------------+
+| .. | previous directory |
++----+--------------------+
 
-Making directory : mkdir [dirName1] [dirName2] ... [dirNameN]
-Creating file : touch [fileName1] [fileName2] ... [fileNameN]
-Moving file or directory : mv source_file destination_dir
-Renaming file or directory : mv old_name new_name
-Copying file or directory : cp source_file destination_dir
-Deleting file : rm file_name
+Print out current working directory : $pwd
+
+Making directory : $mkdir [dirName1] [dirName2] ... [dirNameN]
+Creating file : $touch [fileName1] [fileName2] ... [fileNameN]
+Moving file or directory : $mv source_file destination_dir
+Renaming file or directory : $mv old_name new_name
+Copying file or directory : $cp source_file destination_dir
+Deleting file : $rm file_name
 **Note:
-  Removing empty directory : rmdir directory_name
-  Removing non empty directory without permission : rm -r directory_name
-  Removing non empty directory with permission : rm -rf directory_name
- 
+  Removing empty directory : $rmdir directory_name
+  Removing non empty directory without permission : $rm -r directory_name
+  Removing non empty directory with permission : $rm -rf directory_name
+Counting word in a file : $wc filename1 filename2 ... filenameN
+  First column: represents the total number of line in the file.
+  Second column: represents the total number of words in the file.
+  Third column: represents the total number of bytes in the file. This is the actual size of the file.
+  Fourth column: represents the file name.
