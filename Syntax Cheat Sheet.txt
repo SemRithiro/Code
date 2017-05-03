@@ -37,4 +37,31 @@ Polymophism: A groups of object that execute on method that has the same name. C
 called abstract class per virtual function are class that has virtual as prefix, no definition, has value equal
 zero(0), and can't create object from abstract class. Normally abstract class act as base class
 
-To be con.
+example:
+class base{
+public:
+  virtual fun1();
+  virtual fun2();
+  ...
+  virtual funN();
+};
+class son1 :: public base{
+public:
+  fun1();
+  fun2();
+  ...
+  funN();
+};
+class son1 :: public base{
+public:
+  fun1();
+  fun2();
+  ...
+  funN();
+};
+
+See more examples.
+
+------------------------------------------------------------------------------------------------------------------
+Overloading: A group of functions which have the same name, could be the same amount of parameter but different datatype,
+and design for different task.

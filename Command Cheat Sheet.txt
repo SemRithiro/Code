@@ -1,0 +1,31 @@
++File Management:
+
+Listing current working directory or other : ls [optional] [directory]
++----+--------------------------------------------+
+| -l | list with detail                           |
++----+--------------------------------------------+
+| -a | list all file                              |
++----+--------------------------------------------+
+| *  | list all file include file in subdirectory |
++----+--------------------------------------------+
+
+Listing current working directory with filter : ls [optional] | grep "condition"
+Ex. ls -l | grep ".cpp"
+
+Changing directory : cd [directory]
++---+----------------+
+| ~ | home directory |
++---+----------------+
+| / | root directory |
++---+----------------+
+
+Making directory : mkdir [dirName1] [dirName2] ... [dirNameN]
+Creating file : touch [fileName1] [fileName2] ... [fileNameN]
+Moving file or directory : mv source_file destination_dir
+Renaming file or directory : mv old_name new_name
+Copying file or directory : cp source_file destination_dir
+Deleting file : rm file_name
+**Note:
+  Removing empty directory : rmdir directory_name
+  Removing non empty directory without permission : rm -r directory_name
+  Removing non empty directory with permission : rm -rf directory_name
