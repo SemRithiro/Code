@@ -12,6 +12,15 @@ Listing current working directory or other : $ls [optional] [directory]
 Listing current working directory with filter : $ls [optional] | grep "condition"
 Ex. $ls -l | grep ".cpp"
 
+Condition
++----+-------------------+
+| && | AND               |
++----+-------------------+
+| || | OR                |
++----+-------------------+
+| |  | Combine condition |
++----+-------------------+
+
 Changing directory : $cd [directory]
 +----+--------------------+
 | ~  | home directory     |
@@ -40,3 +49,27 @@ Counting word in a file : $wc filename1 filename2 ... filenameN
   Second column: represents the total number of words in the file.
   Third column: represents the total number of bytes in the file. This is the actual size of the file.
   Fourth column: represents the file name.
+
++Text Editor : $(Text_Editor_Name) file_name
+
+Text_Editor_Name
++------+----------------------------+
+| vi   | vim text editor            |
++------+----------------------------+
+| nano | friendly text editor       |
++------+----------------------------+
+| cat  | concentrate and print file |
++------+----------------------------+
+**Note for cat:
+  Printing file : $cat file_name
+  Appending file : $cat >> file_name
+  Overwrite file : $cat > file_name
+
++Printing File
+  Printing from top to bottom : $more file_name
+  Printing from bottom : $less file_name
+  Printing exact total line from top : $head [total_line] file_name
+  Printing exact total line from bottom : $tail [total_line] file_name
+
+Switching directory: $pushd directory
+Coming to where you left from pushd : $popd
