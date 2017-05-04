@@ -103,4 +103,5 @@ Permission List
 +---+----------------------+
 
 +Creating shortcut command : $alias shortcut_name="command"
-ex. $alias pd="pwd"
+Ex. $alias pd="pwd"
+Note: After close terminal every shotrcut will be erase
