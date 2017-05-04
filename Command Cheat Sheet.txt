@@ -68,6 +68,15 @@ Text_Editor_Name
   Appending file : $cat >> file_name
   Overwrite file : $cat > file_name
 
++Copying text in on file to another : $cat file1 [operators] file2
+
+Operators
++----+------------------------------------+
+| >  | Overwrite file2 with text in file1 |
++----+------------------------------------+
+| >> | Appending file2 with text in file1 |
++----+------------------------------------+
+
 +Printing File
   Printing from top to bottom : $more file_name
   Printing from bottom : $less file_name
@@ -104,4 +113,4 @@ Permission List
 
 +Creating shortcut command : $alias shortcut_name="command"
 Ex. $alias pd="pwd"
-Note: After close terminal every shotrcut will be erase
+Note: After close terminal every shortcut will be erase.
