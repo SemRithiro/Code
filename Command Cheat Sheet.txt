@@ -103,3 +103,4 @@ Permission List
 +---+----------------------+
 
 +Creating shortcut command : $alias shortcut_name="command"
+ex. $alias pd="pwd"
