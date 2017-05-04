@@ -101,3 +101,5 @@ Permission List
 +---+----------------------+
 | 7 | Combination of 4+2+1 |
 +---+----------------------+
+
++Creating shortcut command : $alias shortcut_name="command"
