@@ -32,6 +32,9 @@ Changing directory : $cd [directory]
 | .. | previous directory |
 +----+--------------------+
 
+Switching directory: $pushd directory
+Coming to where you left from pushd : $popd
+
 Print out current working directory : $pwd
 
 Making directory : $mkdir [dirName1] [dirName2] ... [dirNameN]
@@ -71,5 +74,30 @@ Text_Editor_Name
   Printing exact total line from top : $head [total_line] file_name
   Printing exact total line from bottom : $tail [total_line] file_name
 
-Switching directory: $pushd directory
-Coming to where you left from pushd : $popd
++Changing permission on file or directory : $chmod permission file_name
+Permission divided into three groups.
+  1. User
+  2. Group
+  3. Others
+
+Permission divided into three types.
+  1. Read (r)
+  2. Write (w)
+  3. Execute (x)
+
+Permission List
++---+----------------------+
+| 0 | No Permission        |
++---+----------------------+
+| 1 | Execute Permission   |
++---+----------------------+
+| 2 | Write Permission     |
++---+----------------------+
+| 3 | Read Permission      |
++---+----------------------+
+| 4 | Combination of 4+0+0 |
++---+----------------------+
+| 5 | Combination of 4+0+1 |
++---+----------------------+
+| 7 | Combination of 4+2+1 |
++---+----------------------+
