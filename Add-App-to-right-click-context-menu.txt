@@ -1,0 +1,16 @@
+
+goto regedit > HKEY_CLASSES_ROOT > Directory > Background > shell
+
+right-click on shell > new Key > input "App name" > OK > right-click on App name 
+
+click on new Key > input "command" > OK > Double-click on (Default) in the right panel
+
+input "App Path" to the value textbox > OK
+
+E.g. Notepad path is "C:\Windows\notepad.exe" , this path is inputted in value textbox
+
+******
+	You can get the App Path by:
+right-click on the App Shortcut > Properties > Copy texts(path) from the Target textbox
+	
+13.4 x 8.4 Full Screen

@@ -1,0 +1,17 @@
+//Get HDD Serial code for Windows 64bit
+Function HDSerialNumber() As String
+Dim fsObj As Object
+Dim drv As Object
+    Set fsObj = CreateObject("Scripting.FileSystemObject")
+    Set drv = fsObj.Drives("C")
+    HDSerialNumber = Left(Hex(drv.SerialNumber), 4) _
+                     & "-" & Right(Hex(drv.SerialNumber), 4)
+    Debug.Print HDSerialNumber
+ 
+End Function
+
+//Get HDD Serial code for Windows 32bit
+Private Const MAX_PATH = 260Private Declare Function apiGetVolumeInformation Lib "kernel32" Alias "GetVolumeInformationA" _    (ByVal lpRootPathName As String, ByVal lpVolumeNameBuffer As String, ByVal nVolumeNameSize As Long, _    lpVolumeSerialNumber As Long, lpMaximumComponentLength As Long, lpFileSystemFlags As Long, _    ByVal lpFileSystemNameBuffer As String, ByVal nFileSystemNameSize As Long) As LongFunction fSerialNumber(strDriveLetter As String) As String    Dim lngReturn As Long, lngDummy1 As Long, lngDummy2 As Long, lngSerial As Long    Dim strDummy1 As String, strDummy2 As String, strSerial As String    strDummy1 = Space(MAX_PATH)    strDummy2 = Space(MAX_PATH)    lngReturn = apiGetVolumeInformation(strDriveLetter, strDummy1, Len(strDummy1), lngSerial, lngDummy1, lngDummy2, strDummy2, Len(strDummy2))    strSerial = Trim(Hex(lngSerial))    strSerial = String(8 - Len(strSerial), "0") & strSerial    strSerial = Left(strSerial, 4) & "-" & Right(strSerial, 4)    fSerialNumber = strSerialEnd Function
+
+//Get MAC Address Windows 32&64 bit
+Public Function getMacAddress(Optional strComputer As Variant) As StringDim oWMIService As ObjectDim oMacs As ObjectDim oMac As ObjectDim strComp As Variant'if no computer name is passed then use the name of the computer running the code.If IsMissing(strComputer) Then    strComputer = "."End If          Set oWMIService = GetObject("winmgmts:" & "{impersonationLevel=impersonate}!\\" & strComputer & "\root\cimv2")    Set oMacs = oWMIService.ExecQuery("Select * from Win32_NetworkAdapterConfiguration")    'Win32_ComputerSystem    For Each oMac In oMacs       If IsNull(oMac.MACAddress) = False Then        Debug.Print oMac.MACAddress        getMacAddress = oMac.MACAddress    End If    NextEnd Function

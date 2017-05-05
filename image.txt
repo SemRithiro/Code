@@ -1,0 +1,18 @@
+Dim f As Object
+    Dim strFile As String
+    Dim strFolder As String
+    Dim varItem As Variant
+
+    Set f = Application.FileDialog(3)
+    f.AllowMultiSelect = True
+    If f.Show Then
+        For Each varItem In f.SelectedItems
+            strFile = Dir(varItem)
+            strFolder = Left(varItem, Len(varItem) - Len(strFile))
+            MsgBox "Folder: " & strFolder & vbCrLf & _
+                "File: " & strFile
+        Next
+        imgmain.Picture = strFile
+        txtlocaltion = strFolder
+    End If
+    Set f = Nothing

@@ -1,0 +1,40 @@
+128  64  32  16  8  4  2  1
+
+Borrw Bit
+Remain ID(R) = 32 - CIDR
+Number of subnet = pow(2,Borrow Bit)
+Usable Host = pow(2,R)-2
+Rang IP = 256-subnet mask
+
+Ex: 192.168.1.x 255.255.255.0 => 192.168.1.x/24
+	- Borrow bit=0
+	- Remain ID(R)=32-CIDR => 32-24=8
+	- Number of subnet=pow(2,Borrow bit) => pow(2,0)=1
+	- Usable Host=pow(2,R)-2 => pow(2,R) => pow(2,8)-2=256
+	- Rang IP=256-subnet => 256-0=256
+	So, 192.168.1.1-->254/24
+
+0	  256
+|1	254|
+
+Ex: 192.168.1.x 255.255.255.128 => 192.168.1.x/25
+	- Borrow Bit=1
+	- Ramain ID(R)=32-CIDR => 32-25=7
+	- Number of subnet=pow(2,Borrow bit) => pow(2,1)=2
+	- Usable Host=pow(2,R)-2 => pow(2,8)-2=126
+	- Rang IP=256-subnet => 256-128=128
+	So, 192.168.1.1-->128/25 and 192.168.1.129-->254/25
+
+0	  128	     256
+|1	126|129    254|
+
+Ex: 192.168.200.x 255.255.255.252 => 192.168.200.x/30
+	- Borrow bit=6
+	- Remain ID(R)32-CIDR => 32-30=2
+	- Number of subnet=pow(2,Borrow bit) => pow(2,6)=64
+	- Usable Host=pow(2,R)-2 => pow(2,2)-2=2
+	- Rang IP=256-subnet => 256-252=4
+	So, 192.168.200.1-->192.168.200.2, 192.168.200.5-->192.168.200.6.... 192.168.200.253-->192.168.200.254
+
+0	 4	 8	252	  256
+|1	2|5	6|.......|253	254|

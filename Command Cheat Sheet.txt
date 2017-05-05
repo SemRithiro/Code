@@ -33,7 +33,7 @@ Changing directory : $cd [directory]
 +----+--------------------+
 
 Switching directory: $pushd directory
-Coming to where you left from pushd : $popd
+Coming to where you left from $pushd : $popd
 
 Print out current working directory : $pwd
 
