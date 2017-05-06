@@ -102,15 +102,25 @@ void main(){
 	outfile.close();
 	cout<<endl;*/
 
-/*	ifstream infile("PERSON.DAT",ios::binary);
+
+/*Note:
+	if you use 64-bit Operating System you need to place ios::binary after file name.
+	ofstream outfile("PERSON.DAT",ios::binary);
+	ifstream infile("PERSON.DAT",ios::binary);
+*/
+
+//Write multiple data into file
+/*	ifstream infile("PERSON.DAT");
 	infile.read((char*)(&pers1),4*sizeof(person));
 	for(int i=0;i<4;i++)
 		pers1[i].showData();
 	infile.close();*/
 
+//Read multiple data from file
 	ifstream infile("PERSON.DAT");
 	while(1){
 		infile.read((char*)(&pers2),sizeof(person));
+		//read until eof (end of file)
 		if(infile.eof()) break;
 		pers2.showData();
 	}
