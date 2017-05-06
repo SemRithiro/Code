@@ -1,0 +1,5 @@
+HKey Classes Root
+All File System Objects
+Shell
+LaunchWorkFolderControl
+Command -> edit value of (Default) -> cmd.exe /c echo "%1"|clip
