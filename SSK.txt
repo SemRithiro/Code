@@ -1,0 +1,263 @@
+**************************Linked List****************************
+
+linked list is a list of node linked together by field next. Each node has two fields including
+	field info used for storing data and field next used for storing pointer to next node.
+	Last node has field next equal NULL. plist points to first node.
+
+linked list can be created by 2 ways including by array and by dynamic.
+
+	*** Linked list by array
+
+		@ Data structure of linked list
+			_______________________			
+			#define MaxArray ...
+			struct NodeType{
+				datatype info;
+				int next;
+			}
+			Node[MaxArray];
+			_______________________
+
+		@ Algorithm: Available node 
+			- to create a set of nodes before hand
+			_______________________________________________________________
+			void AvailableNode(){
+				int ptr=0;		//point to Node[0]	
+				for(int i=0;i<MaxArray-1;i++)
+					Node[i].next=i+1;
+				Node[MaxArray-1]=-1;	//field next of last node=NULL
+			}
+			_______________________________________________________________
+
+		@ Algorithm: Get node
+			_________________________________
+			int GetNode(){
+				int p;
+				p=ptr;
+				ptr=Node[ptr].next; 
+				return(p);
+			}
+			_________________________________
+
+		@ Algorithm: Free node
+			_________________________________
+			void FreeNode(int p){
+				Node[p].next=ptr;
+				ptr=p;
+			}
+			_________________________________
+
+	*** Linked list by dynamic
+		.Pointer is a variable storing address which is used to point to another variable that 
+			doesn't store any data.
+		.Dynamic is a variable catching a space of memory in order to store data of a variable 
+			pointer.
+
+		@ Data structure of linked list by dynamic
+			__________________________________
+			struct NodeType{
+				datatype info;
+				struct NodeType *next;	
+			}Node;
+			typedef struct NodeType *pointertype;
+			__________________________________
+		
+		@ Algorithm: Get node
+			_____________________________________________________________
+			pointertype getNode(){
+				struct NodeType *p;
+				p=(struct NodeType*)malloc(sizeof(struct NodeType));
+				return(p);
+			}
+			_____________________________________________________________
+
+		@ Algorithm: Free node
+			___________________________________
+			void freeNode(pointertype p){
+				Free(p);
+			}
+			___________________________________
+		
+		. plist 	is pointer points to first node of linked list
+		. p		is pointer points to any node of linked list
+		. info(p) 	is used for storing data of node pointed by variable p
+		. next(p) 	is used for storing address of a node which is after node p
+
+!!!!!!!!!!Singly linked list
+
+	@ Data structure by dynamic
+		___________________________________
+		struct NodeType{
+			datatype info;
+			struct NodeType *next;
+		}Node;
+		typedef struct NodeType *pointertype;
+		___________________________________				
+
+	@ Algorithm: Initialize (create a free linked list)
+		_____________________________________
+		void initialize(pointertype *plist){
+			*plist=NULL;
+		}
+		_____________________________________
+
+	@ Algorithm: Insert first (insert node[p] with info=item into first position of linked list)
+		____________________________________________________
+		void insertFirst(pointertype *plist,datatype item){
+			pointertype p= Getnode();
+			p->infor=item;
+			p->next=*plist;		//???
+			*plist=p;		//point to Node[p]
+		}
+		____________________________________________________
+
+	@ Algorithm: Insert after (insert node[q] with info=item into a position after node[p])
+		____________________________________________________
+		void insertAfter(pointertype p,datatype item){
+			pointertype q= Getnode();
+			q->info=item;
+			q->next = p->next;
+			p->next = q;		//Node[p]->Node[q]
+		}	
+		____________________________________________________
+
+???	@ Algorithm: Delete first (delete node[p] with info=item from first position of linked list)
+		_____________________________________________
+		datatype deleteFirst(pointertype *plist){
+			pointertype p = *plist;
+			datatype element = p->info;
+			plist = p->next;
+			free(p);
+			return(element);
+		}
+		_____________________________________________
+
+	@ Algorithm: Traverse (show data of each node from first node to last node)
+		_____________________________________________
+		void traverse(pointertype *plist){
+			pointertype p=*plist;
+			while(p!=NULL){
+				printf("%...", p->info);
+				p=p->next;
+			}
+		}
+		_____________________________________________
+	
+	@ Algorithm: Search (search for node that has non-redundanced info's item)
+		_________________________________________________________
+		pointertype search(pointertype *plist, datatype item){
+			pointertype p=*plist;
+			while(p!=NULL){
+				if(p->info==item)
+					return(p);
+				else
+					return(NULL);
+				p=p->next;
+			}
+		}
+		__________________________________________________________
+
+	@ Algorithm: sort (sort data in increment)
+		________________________________________________________
+		void sort(pointertype *plist){
+			pointertype p;
+			datatype item;
+			for(p=*plist ; p->next!=NULL ; p=p->next)
+				for(q=p->next ; q!=NULL ; q=q->next)
+					if(p->info > q->info){
+						item=p->info;
+						p->info = q->info;
+						q->info = item;
+					}
+		}
+		________________________________________________________
+
+	@ Algorithm: clear list (delete all nodes in the list)
+		_______________________________________________
+		void clearList(pointertype *plist){
+			pointertype p=*plist;
+			while(p!=NULL){
+				free(p);
+				p=p->next;
+			}
+		}
+		_______________________________________________
+
+!!!!!!!!Circular Singly Linked List
+		-a set of nodes which link together
+		-each node has 2 fields: field info and field next
+		-has variable plist which points to last node
+		-last node has field next which points to first nodes
+
+	@ Algoritm: Insert a node at the front end
+		______________________________________________________
+		NODE insertFront(datatype item,NODE last){
+			NODE temp;
+			temp=getNode();
+			temp->info=item;
+???			if(last==NULL)		//make temp to be the first node
+				last=temp;
+			else{
+				temp->link=last->link;
+				last->link=temp;
+???				return(last);
+			}
+		}
+		______________________________________________________
+
+	@ Algorithm: Insert a node at the rear end
+		______________________________________________________
+		NODE insertRear(datatype item,NODE last){
+			NODE temp;
+			temp=getNode();
+			temp->info=item;
+			if(last==NULL)	
+				last temp;
+			else{
+				temp->link=last->link;
+				last->link=temp;
+???				return(temp);
+			}
+		}
+		______________________________________________________
+
+	@ Algorithm: Delete a node from the frond end
+		____________________________________________________________________
+		NODE deleteFront(NODE last){
+			NODE temp,first;
+			if(last==NULL){
+				printf("list is empty\n");
+				return(NULL);
+			}
+			if(last->link==last){	//only one node is present
+				printf("The item delete is %d",last->info);
+				freeNode(last);
+				return(NULL);
+			}
+			//List contains more than one node
+			first=last->link;
+			last->link=first->link;  
+			printf("The item deleted is %d",first->info);
+			freeNode(first);
+			return(last);
+		}
+		____________________________________________________________________
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
