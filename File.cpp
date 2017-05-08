@@ -1,5 +1,6 @@
 #include <iostream.h>
 #include <fstream.h>
+#include <conio.h>
 /*
 ifstream : Use to read data from file.
 ofstream: Use to write data to file.
@@ -73,7 +74,8 @@ protected:
 	short age;
 public:
 	void getData(){
-		cout<<"Enter name: ";	cin>>name;
+		cin.seekg(0);
+		cout<<"Enter name: ";	cin.get(name,80);
 		cout<<"Enter age: ";	cin>>age;
 	}
 	void showData(){
@@ -94,7 +96,9 @@ public:
 }*/
 
 void main(){
-	person pers[20],pers1[20],pers2;
+	//person pers[20],pers1[20],pers2;
+	person *per,pers;
+	int i=0;
 /*	for(int i=0;i<4;i++)
 		pers[i].getData();
 	ofstream outfile("PERSON.DAT",ios::binary);
@@ -102,27 +106,40 @@ void main(){
 	outfile.close();
 	cout<<endl;*/
 
-
-/*Note:
-	if you use 64-bit Operating System you need to place ios::binary after file name.
-	ofstream outfile("PERSON.DAT",ios::binary);
-	ifstream infile("PERSON.DAT",ios::binary);
-*/
-
-//Write multiple data into file
-/*	ifstream infile("PERSON.DAT");
+/*	ifstream infile("PERSON.DAT",ios::binary);
 	infile.read((char*)(&pers1),4*sizeof(person));
 	for(int i=0;i<4;i++)
 		pers1[i].showData();
 	infile.close();*/
-
-//Read multiple data from file
-	ifstream infile("PERSON.DAT");
+	fstream iofile("PERSON.DAT");
 	while(1){
-		infile.read((char*)(&pers2),sizeof(person));
-		//read until eof (end of file)
-		if(infile.eof()) break;
-		pers2.showData();
+		do{
+		per[i].getData();
+		iofile.write((char*)(&per),sizeof(person));
+		i++;
+		}while(getch()==13);
+		iofile.read((char*)(&pers),sizeof(person));
+		if(iofile.eof()) break;
+		pers.showData();
 	}
-	infile.close();
+	iofile.close();
+
+/*A:
+	while(1){
+		if(getch()==13){
+			per.getData();
+			iofile.write((char*)(&per),sizeof(person));
+			clrscr();
+		}
+		else{
+			while(1){
+				iofile.read((char*)(&per),sizeof(person));
+				if(iofile.eof()) break;
+				per.showData();
+			}
+			iofile.close();
+		}
+			
+	}
+	goto A;*/
 }
