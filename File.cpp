@@ -96,12 +96,10 @@ public:
 }*/
 
 void main(){
-	//person pers[20],pers1[20],pers2;
-	person *per,pers;
-	int i=0;
+	person pers[20],pers1[20],pers2;
 /*	for(int i=0;i<4;i++)
 		pers[i].getData();
-	ofstream outfile("PERSON.DAT",ios::binary);
+	ofstream outfile("PERSON.DAT",ios::binary | ios::app);
 	outfile.write((char*)(&pers),4*sizeof(person));
 	outfile.close();
 	cout<<endl;*/
@@ -111,6 +109,8 @@ void main(){
 	for(int i=0;i<4;i++)
 		pers1[i].showData();
 	infile.close();*/
+/*	person *per,pers;
+	int i=0;
 	fstream iofile("PERSON.DAT");
 	while(1){
 		do{
@@ -122,7 +122,7 @@ void main(){
 		if(iofile.eof()) break;
 		pers.showData();
 	}
-	iofile.close();
+	iofile.close();*/
 
 /*A:
 	while(1){
@@ -139,7 +139,23 @@ void main(){
 			}
 			iofile.close();
 		}
-			
+
 	}
 	goto A;*/
+
+/*	ifstream infile("PERSON.DAT");
+	while(1){
+		infile.read((char*)(&pers2),sizeof(person));
+		if(infile.eof()) break;
+		pers2.showData();
+	}*/
+
+	ifstream infile("PERSON.DAT", ios::binary | ios::in | ios::ate );
+	long n=infile.tellg()/sizeof(person);
+	for(int i=n-1;i>=0;i--){
+		infile.seekg((i)*sizeof(person),ios::beg); //ios::beg = begining of file
+		infile.read((char*)(&pers2),sizeof(person));
+		pers2.showData();
+	}
+	infile.close();
 }
