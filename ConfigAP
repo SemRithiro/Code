@@ -1,0 +1,10 @@
+How Configure Access Point:
+1. Login
+2. Set IP
+3. DHCP
+4. SSID
+5. Password
+6. Security
+	- Disable broadcast SSID
+	- Change Default Setting
+	- MAC filter
