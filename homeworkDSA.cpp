@@ -1,18 +1,18 @@
-#include<stdio.h>
-#include<stdlib.h>
-#include<conio.h>
-#include<iostream.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <conio.h>
+#include <iostream.h>
 struct nodetype
 {
 	int info;
-	struct Nodetype *left;
-	struct Nodetype *right;
-	/*tydef struct Nodetype *pointertype;*/
+	struct nodetype *left;
+	struct nodetype *right;
+	/*tydef struct nodetype *pointertype;*/
 }
 pointertype Getnode()
 {
 	pointertype p;
-	p=(struct Nodetype*) malloc(sizeof(struct Nodetype));
+	p=(struct nodetype*) malloc(sizeof(struct nodetype));
 	p->info = item;
 	p->left = NULL;
 	p->right = NULL;
