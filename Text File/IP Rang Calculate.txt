@@ -1,3 +1,7 @@
+Class A: 1->126
+Class B: 128->191
+Class C: 192->223
+
 128  64  32  16  8  4  2  1
 
 Borrw Bit
