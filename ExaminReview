@@ -1,0 +1,22 @@
+Object Oriented Program has 3 main importants:
+	1. Encapulation.
+	2. Inheritance.
+	3. Polymophism.
+
+-------------------------------------------------------------------
+Input/Output Operator
+Class ClassName{
+	friend ostream &operator<<(ostream& out,ClassName &obj);
+	friend istream &operator>>(istream& in,ClassName &obj);
+};
+ostream & operator <<(ostream & out,ClassName &obj){
+	out<<" Text= "<< obj.variable;
+	return out;
+}
+istream & operator >>(istream & in,ClassName &obj){
+	cout<<" Text= "; in>>obj.variable;
+	return in;
+}
+-------------------------------------------------------------------
+ifstream name("Name.extension",ios::binary|ios::in|ios::ate) //use to read file dynamically
+long n = name.tellg()/sizeof(ClassName); //use to get how many data in file.
