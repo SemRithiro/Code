@@ -1,3 +1,7 @@
+#!/bin/bash
+#developer: Sem Rithiro
+#developed date: 27 - May - 2017
+
 echo Setting hibernatemode to 0...
 pmset -a hibernatemode 0
 sleep 0.2

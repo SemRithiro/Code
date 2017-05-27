@@ -1,3 +1,7 @@
+#!/bin/bash
+#develop by: Sem Rithiro
+#develop date: 27 - May - 2017
+
 echo Restarting network manager
 service network-manager restart
 echo Network manager restarted
