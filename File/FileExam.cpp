@@ -41,7 +41,7 @@ float Employee::income(){
 }
 
 //Using two classes ofstream and ifstream
-/*void main(){
+void main(){
 	clrscr();
 	Employee e[20];
 	int n=getN("Please input N: ");
@@ -64,4 +64,4 @@ float Employee::income(){
 	in.read((char*)&e,n*sizeof(Employee));
 	for(int i=0;i<n;i++)
 		cout<<e[i];
-}*/
+}
