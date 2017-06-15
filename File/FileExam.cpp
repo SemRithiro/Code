@@ -4,7 +4,7 @@ private:
  	int id,age;
  	char name[20];
 	float rate,hours;
-public:
+public: 
  	Employee(){id=0; strcpy(name,"Rithiro"); age=20; rate=0.0; hours=0.0;}
  	Employee(int i,char *n, int a, float r, float h);
  	friend ostream &operator<<(ostream& out, Employee &emp);
