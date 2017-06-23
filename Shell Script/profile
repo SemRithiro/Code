@@ -1,0 +1,22 @@
+# Aliases for MacOS X
+# Author : Sem Rithiro
+# Copyright : Sem Rithiro
+# Date : 23 June 2017
+# Note : Only System Aliases will work on every Macbook
+
+# System Aliases
+alias du="diskutil"
+alias disk="cd /Volumes/ && ls"
+alias disableShadow="defaults write com.apple.screencapture disable-shadow -bool true && Killall SystemUIServer"
+alias enableShadow="defaults write com.apple.screencapture disable-shadow -bool false && Killall SystemUIServer"
+alias scrLocation="defaults write com.apple.screencapture location"
+
+# SQL Aliases
+alias sql1="brew services start mysql"
+alias sql0="brew services stop mysql"
+
+# Personal Aliases
+alias m4a="youtube-dl -f 140"
+alias smv="mv ~/Downloads/*.mov ~/.bin/"
+alias smvp="mv ~/Downloads/*.mp4 ~/.bin/"
+alias clean="sudo bash ~/Documents/GitHub/Shell\ Script/CachesCleanUp.sh && clear && Killall SystemUIServer"
