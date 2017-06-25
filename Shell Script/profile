@@ -1,8 +1,8 @@
 #########################################################
 # Aliases for MacOS X					#
 # Author : Sem Rithiro					#
-# Copyright : Sem Rithiro				#
-# Date : 23 June 2017					#
+# Copyright(c) : Sem Rithiro				#
+# Date : 23-June-2017					#
 # Note : Only System Aliases will work on every Macbook	#
 #########################################################
 
@@ -21,4 +21,5 @@ alias sql0="brew services stop mysql"
 alias m4a="youtube-dl -f 140"
 alias smv="mv ~/Downloads/*.mov ~/.bin/"
 alias smvp="mv ~/Downloads/*.mp4 ~/.bin/"
+alias bvdo="mv ~/.bin/* /Volumes/Rithiro/Videos/Movies/Robot\ Overlords\ \(2014\)\ \[1080p\]/File/"
 alias clean="sudo bash ~/Documents/GitHub/Shell\ Script/CachesCleanUp.sh && clear && Killall SystemUIServer"
