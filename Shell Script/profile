@@ -1,8 +1,10 @@
-# Aliases for MacOS X
-# Author : Sem Rithiro
-# Copyright : Sem Rithiro
-# Date : 23 June 2017
-# Note : Only System Aliases will work on every Macbook
+#########################################################
+# Aliases for MacOS X					#
+# Author : Sem Rithiro					#
+# Copyright : Sem Rithiro				#
+# Date : 23 June 2017					#
+# Note : Only System Aliases will work on every Macbook	#
+#########################################################
 
 # System Aliases
 alias du="diskutil"
