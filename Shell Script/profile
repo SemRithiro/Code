@@ -20,6 +20,7 @@ alias sql0="brew services stop mysql"
 # Personal Aliases
 alias m4a="youtube-dl -f 140"
 alias smv="mv ~/Downloads/*.mov ~/.bin/"
-alias smvp="mv ~/Downloads/*.mp4 ~/.bin/"
+alias smp="mv ~/Downloads/*.mp4 ~/.bin/"
 alias bvdo="mv ~/.bin/* /Volumes/Rithiro/Videos/Movies/Robot\ Overlords\ \(2014\)\ \[1080p\]/File/"
 alias clean="sudo bash ~/Documents/GitHub/Shell\ Script/CachesCleanUp.sh && clear && Killall SystemUIServer"
+alias selfL="cd /Users/rithirosem/Google\ Drive/Year\ 3/Code/C#/Rithiro/Self\ Learning/"
