@@ -1,0 +1,23 @@
+#Add Columns in ListView
+listview1.Columns.Add("Column Name",width);
+
+#Add Item in ListView
+string[ ] arr = new string[4];
+ListViewItem itm;
+//add item to listview
+arr[0] = "details 1";
+arr[1] = "details 2";
+arr[2] = "details 3";
+itm = new ListViewItem(arr);
+listView1.Items.Add(itm);
+
+#Get selected item from ListView
+productName = listView1.SelectedItem[0].SubUtems[0].Text;
+
+#Sorting ListView items
+listView1.Sorted = true;
+
+#Add Checkbox in ListView
+
+myListView.CheckBoxes = true;
+myListView.Columns.Add(text,width,alignment);
