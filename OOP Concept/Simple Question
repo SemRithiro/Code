@@ -1,0 +1,6 @@
+1. What is Function Overloading?
+    Function overloading are function which has the same name but different parameter and can perform different task depend on its body.
+2. What is modifier operator?
+    Modifier operator are operator which use to apply or filter scope for each member of class.
+3. What is constructor?
+    Constructor is a special member in class which use to give first value to any member in class when the object was created. Normally constructor must have the same name as class.
