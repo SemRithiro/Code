@@ -1,0 +1,7 @@
+using System.Data;
+using System.Data.SqlClient;
+
+	SqlConnection conn = new SqlConnection("Data Source = [Server Name]; Initial Catalog = [Database Name]; User id = [User Name]; Password = [Password]");
+	conn.open();
+	
+	conn.close();

@@ -1,0 +1,6 @@
+bulk
+insert Commune from 'C:\tbCommune.txt' 
+	with
+(		Fieldterminator=',',
+		Rowterminator='\n'
+)
